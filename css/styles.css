@@ -4,22 +4,50 @@
     --light_red: hsl(0, 100%, 63%);
     --very-dark-cyan: hsl(192, 100%, 9%);
     --very-pale-blue: hsl(207, 100%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
     --fuente-titulos: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Open Sans', sans-serif;
 }
 * {
-
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 body {
     font-family: var(--fuente-cuerpo);
+    font-size: 16px;
+}
+
+/* ---------------  CABECERA  --------------- */
+
+.cabecera {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    /* position: fixed; */
+}
+.cabecera__logo {
+    margin: 0;
+    height: 1.2em;
 }
 
 
 
 
+/* ---------------  BOTONES  ---------------*/
+.cabecera__boton {
+    background-color: var(--white);
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    border-radius: 25px;
+    padding: .4em 1.4em;
+    font-size: .8em;
+    margin: 0;
+}
 
-
-
+/* -------------  ATRIBUCIÓN  ------------- */
 
 .attribution { 
     font-size: 11px; 
@@ -27,4 +55,30 @@ body {
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+
+/* --------------------------------------------------- */
+/*                   MEDIA QUERIES                     */
+/* --------------------------------------------------- */
+
+@media screen and (min-width: 800px) {
+
+    /* ------------------  CABECERA  ----------------- */
+
+    .cabecera {
+        padding: 2.5em;
+    }
+    .cabecera__logo {
+        margin: 0;
+        height: 2em;
+    }
+
+
+    /* ---------------  BOTONES  ---------------*/
+
+    .cabecera__boton {
+        padding: .5em 1.8em;
+        font-size: 1em;
+    }
 }
