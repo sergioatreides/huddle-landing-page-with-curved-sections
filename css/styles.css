@@ -1,0 +1,30 @@
+:root {
+    --pink: hsl(322, 100%, 66%);
+    --light_pink: hsl(321, 100%, 78%);
+    --light_red: hsl(0, 100%, 63%);
+    --very-dark-cyan: hsl(192, 100%, 9%);
+    --very-pale-blue: hsl(207, 100%, 98%);
+    --fuente-titulos: 'Poppins', sans-serif;
+    --fuente-cuerpo: 'Open Sans', sans-serif;
+}
+* {
+
+}
+body {
+    font-family: var(--fuente-cuerpo);
+}
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
