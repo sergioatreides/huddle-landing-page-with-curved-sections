@@ -1,9 +1,10 @@
 :root {
     --pink: hsl(322, 100%, 66%);
-    --light_pink: hsl(321, 100%, 78%);
-    --light_red: hsl(0, 100%, 63%);
+    --light-pink: hsl(321, 100%, 78%);
+    --light-red: hsl(0, 100%, 63%);
     --very-dark-cyan: hsl(192, 100%, 9%);
     --very-pale-blue: hsl(207, 100%, 98%);
+    --light-gray: #87949c;
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
     --fuente-titulos: 'Poppins', sans-serif;
@@ -15,7 +16,24 @@
 }
 body {
     font-family: var(--fuente-cuerpo);
-    font-size: 16px;
+    font-size: 15px;
+}
+h1,
+h2,
+.parrafo {
+    text-align: center;
+    color: var(--very-dark-cyan);
+    margin-top: .8em;
+    margin-bottom: 1em;
+}
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.5em;
+}
+.parrafo {
+    font-size: .9em;
 }
 
 /* ---------------  CABECERA  --------------- */
@@ -33,10 +51,79 @@ body {
     height: 1.2em;
 }
 
+/* --------------  CONTENEDOR  -------------- */
 
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    margin-top: 70px;
+}
 
+.seccion {
+    /* De momento encajan la primera y segunda seccion */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------ SECCIÓN CLAIM  ------------ */
+
+.seccion-claim {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+.seccion-claim__img {
+    margin-top: 3.5em;
+    margin-bottom: 4em;
+    width: 100%;
+}
+.seccion-claim__stats {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.seccion-claim__stats__item {
+    width: auto;
+    margin-bottom: 75px;
+}
+.seccion-claim__stats__item__ico {
+    width: 2em;
+    padding-left: .5em;
+}
+.p-stats {
+    color: var(--very-dark-cyan);
+    font-family: var(--fuente-cuerpo);
+    font-weight: bold;
+    font-size: 4em;
+}
+.p-stats-text {
+    color: var(--light-gray);
+    margin-bottom: .5em;
+    text-align: center;
+}
+
+/* ----------- SECCIÓN VENTAJAS  ---------- */
+
+.seccion-ventajas {
+    width: 80vw;
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+}
+.seccion-ventajas__img {
+    width: 95%;
+}
+.seccion-ventajas__grow,
+.seccion-ventajas__flowing,
+.seccion-ventajas__users {
+    display: flex;
+    flex-direction: column;
+}
 
 /* ---------------  BOTONES  ---------------*/
+
 .cabecera__boton {
     background-color: var(--white);
     border: 1px solid var(--pink);
@@ -45,6 +132,23 @@ body {
     padding: .4em 1.4em;
     font-size: .8em;
     margin: 0;
+}
+.boton-cta {
+    border: 0;
+    color: var(--white);
+    background-color: var(--pink);
+    border-radius: 25px;
+    padding: 1em 2.7em;
+    font-size: .8em;
+    font-weight: 600;
+    filter: drop-shadow(0px 1px 2px var(--very-dark-cyan));
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+}
+.boton-cta:hover,
+.boton-cta:active {
+    cursor: pointer;
+    background-color: var(--light-pink);
 }
 
 /* -------------  ATRIBUCIÓN  ------------- */
@@ -57,12 +161,15 @@ body {
     color: hsl(228, 45%, 44%); 
 }
 
-
-/* --------------------------------------------------- */
-/*                   MEDIA QUERIES                     */
-/* --------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+/*                            MEDIA QUERIES                              */
+/* --------------------------------------------------------------------- */
 
 @media screen and (min-width: 800px) {
+
+    h1 {
+        font-size: 2em;
+    }
 
     /* ------------------  CABECERA  ----------------- */
 
@@ -73,7 +180,30 @@ body {
         margin: 0;
         height: 2em;
     }
+    .seccion-claim__img {
+        width: 60%;
+    }
 
+    /* ------------ SECCIÓN CLAIM  ------------ */
+
+    .seccion-claim__stats {
+        flex-direction: row;
+    }
+    .seccion-claim__p {
+        text-align: center;
+        width: 35%;
+        font-size: .9em;
+        line-height: 1.5em;
+        margin-top: 0;
+    }
+
+    /* ----------- SECCIÓN VENTAJAS  ---------- */
+
+    .seccion-ventajas__grow,
+    .seccion-ventajas__flowing,
+    .seccion-ventajas__users {
+        flex-direction: row;
+    }
 
     /* ---------------  BOTONES  ---------------*/
 
