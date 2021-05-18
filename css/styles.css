@@ -34,6 +34,7 @@ h2 {
 }
 .parrafo {
     font-size: .9em;
+    line-height: 1.5em;
 }
 
 /* ---------------  CABECERA  --------------- */
@@ -58,12 +59,6 @@ h2 {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     margin-top: 70px;
-}
-
-.seccion {
-    /* De momento encajan la primera y segunda seccion */
-    display: flex;
-    flex-direction: column;
 }
 
 /* ------------ SECCIÓN CLAIM  ------------ */
@@ -111,18 +106,90 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
+    grid-row-gap: 180px;
 }
 .seccion-ventajas__img {
     width: 95%;
+    margin-bottom: 60px;
 }
-.seccion-ventajas__grow,
-.seccion-ventajas__flowing,
-.seccion-ventajas__users {
+.seccion-ventajas__item {
     display: flex;
     flex-direction: column;
 }
 
-/* ---------------  BOTONES  ---------------*/
+/* ------------- SECCIÓN CTA  ------------- */
+
+.seccion-cta {
+    margin-top: 250px;
+    margin-bottom: 250px;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+.seccion-cta__h2 {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+/* ----------------   PIE   --------------- */
+
+.pie {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    padding: 65px 30px;
+    grid-row-gap: 100px;
+}
+.pie__newsletter__h2,
+.pie__p {
+    color: var(--white);
+    text-align: left;
+}
+.pie__newsletter__formulario {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.pie__info__logo {
+    filter: invert(1) saturate(10) grayscale(1) brightness(10);
+    margin-bottom: 10px;
+    width: 60%;
+}
+.pie__info__contacto {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: repeat(2, auto);
+    margin-top: 40px;
+    align-items: center;
+    justify-content: left;
+    grid-column-gap: 5px;
+}
+.pie__info__contacto img,
+.pie__info__contacto p {
+    margin-left: 0;
+}
+.pie__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+.pie__menu__social-ico {
+    font-size: 1.7em;
+    margin-right: .6em;
+    margin-left: 0;
+}
+.pie__menu__social-ico:hover,
+.pie__menu__social-ico:active {
+    cursor: pointer;
+    color: var(--pink);
+}
+
+/* ----------  BOTONES E INPUT  ------------*/
 
 .cabecera__boton {
     background-color: var(--white);
@@ -132,6 +199,12 @@ h2 {
     padding: .4em 1.4em;
     font-size: .8em;
     margin: 0;
+}
+.cabecera__boton:hover,
+.cabecera__boton:active {
+    cursor: pointer;
+    color: var(--light-pink);
+    border: 1px solid var(--light-pink);
 }
 .boton-cta {
     border: 0;
@@ -145,20 +218,42 @@ h2 {
     margin-top: 2.5em;
     margin-bottom: 2em;
 }
+.boton-pie {
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+    background-color: var(--pink);
+    margin-right: 0;
+    font-size: .8em;
+    font-weight: bold;
+    padding: .9em 3.5em;
+}
 .boton-cta:hover,
-.boton-cta:active {
+.boton-cta:active,
+.boton-pie:hover,
+.boton-pie:active {
     cursor: pointer;
     background-color: var(--light-pink);
+}
+.input-pie {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: .9em;
+    margin-bottom: 12px;
 }
 
 /* -------------  ATRIBUCIÓN  ------------- */
 
 .attribution { 
+    padding: 1em 0;
     font-size: 11px; 
     text-align: center; 
+    background-color: var(--light-gray);
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: hsl(228, 32%, 30%); 
 }
 
 /* --------------------------------------------------------------------- */
@@ -169,6 +264,10 @@ h2 {
 
     h1 {
         font-size: 2em;
+    }
+    h2,
+    .parrafo {
+        text-align: left;
     }
 
     /* ------------------  CABECERA  ----------------- */
@@ -199,16 +298,59 @@ h2 {
 
     /* ----------- SECCIÓN VENTAJAS  ---------- */
 
-    .seccion-ventajas__grow,
-    .seccion-ventajas__flowing,
-    .seccion-ventajas__users {
+    .seccion-ventajas__item {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .seccion-ventajas__item:nth-of-type(2) {
         flex-direction: row;
     }
+    .seccion-ventajas__item__text {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 
-    /* ---------------  BOTONES  ---------------*/
+    /* ----------- SECCIÓN CTA  ---------- */
+
+    .seccion-cta {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    /* ----------------   PIE   --------------- */
+
+    .pie {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 1fr;
+        padding: 100px 70px;
+    }
+    .pie__info {
+        order: -1;
+    }
+    .pie__info__logo {
+        width: 35%;
+    }
+    .pie__newsletter__formulario {
+        flex-direction: row;
+    }
+    .pie__info__logo {
+        margin-top: 0;
+    }
+    .pie__newsletter h2 {
+        margin-top: 0;
+    }
+    .pie__p {
+        padding-right: 135px;
+    }
+
+    /* ----------  BOTONES E INPUT  -----------*/
 
     .cabecera__boton {
         padding: .5em 1.8em;
         font-size: 1em;
+    }
+    .input-pie {
+        margin: 0;
+        width: 64%;
     }
 }
